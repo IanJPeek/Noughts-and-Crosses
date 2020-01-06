@@ -13,8 +13,9 @@ constructor(props) {
 
   render() {
     return (
-      <button className="square" onClick={() => {alert('click');}}>
-        {this.props.value}
+      <button className="square" 
+      onClick={() => this.setState({value:'X'})}>
+        {this.state.value}
       </button>
     );
   }
@@ -32,7 +33,7 @@ class Board extends React.Component {
       <div>
         <div className="status">{status}</div>
         <div className="board-row">
-          {this.renderSquare(0)}
+          <Square value={0} />
           {this.renderSquare(1)}
           {this.renderSquare(2)}
         </div>
